@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+</head>
+<style>
+    tr, th, td{
+        border: 2px solid black;
+        width: 5rem;
+        height: 2rem;
+        text-align: center;
+    }
+</style>
+<body>
+{{data}}
+<h2>Student details</h2>
+    <table>
+         <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Rollno</th>
+            <th colspan="5">Marks</th>
+            <th colspan="2">Action</th>
+        </tr>
+        {% for student in data %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{student.Name}}</td>
+            <td>{{student.Age}}</td>
+            <td>{{student.Rollno}}</td>
+            {% for mark in student.Marks %}
+            <td>{{mark}}</td>
+            {% endfor%} 
+            <td><a href="{{url_for('edit', id = loop.index)}}">Edit</a></td>
+            <td><a href="{{url_for('remove', id = loop.index)}}">Delete</a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    <button ><a style="text-decoration: none;" href="{{url_for('add')}}">Add Student</a></button>
+    <button ><a style="text-decoration: none;" href="{{url_for('logout')}}">Logout</a></button>
+</body>
+</html>
