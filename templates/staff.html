@@ -1,19 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff Login</title>
-</head>
-<body>
-{{data}}
-    <form action="" method="post">
-        <label for="name">User Name: </label>
-        <input type="text" name="name" placeholder="User name"><br><br>
-        <label for="password">Password: </label>
-        <input type="password" name="password" placeholder="password"><br><br>
-        <input type="submit" value="Log in">
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Login</h1>
+    <form action="{{ url_for('staff_login') }}" method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">User Name:</label>
+            <input type="text" class="form-control" name="name" placeholder="User name" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Log in</button>
     </form>
-    <button><a href="{{url_for('navbar')}}">home</a></button>
-</body>
-</html>
+    <button class="btn btn-secondary mt-3"><a href="{{ url_for('navbar') }}" style="color: white; text-decoration: none;">Home</a></button>
+</div>
+{% endblock body %}

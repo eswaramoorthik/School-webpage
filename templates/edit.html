@@ -1,52 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>edit details</title>
-</head>
-<body>
-{{values}}
-<h3>edit Student</h3>
-<form style="text-align-last: left;" method="post">
-    <table>
-        <tr>
-            <td><label for="Name">Name</label></td>
-            <td><input type="text" name="Name" placeholder="Name" value="{{values.Name}}"><br><br></td>
-        </tr>
-        <tr>
-            <td><label for="Age">Age</label></td>
-            <td><input type="text" name="Age" placeholder="Age" value="{{values.Age}}"><br><br></td>
-        </tr>
-        <tr>
-            <td><label for="Rollno">Roll no</label></td>
-            <td><input type="text" name="Rollno" placeholder="Roll no" value="{{values.Rollno}}"><br><br></td>
-        </tr>
-        <tr>
-            <td><label for="sub1">Subject 1</label></td>
-            <td><input type="text" name="sub1" placeholder="Mark" value="{{values.Marks[0]}}"><br><br></td>
-        </tr>
-        <tr>
-            <td><label for="sub2">Subject 2</label></td>
-            <td><input type="text" name="sub2" placeholder="Mark" value="{{values.Marks[1]}}"><br><br></td>
-        </tr>
-        <tr>
-            <td><label for="sub3">Subject 3</label></td>
-            <td><input type="text" name="sub3" placeholder="Mark" value="{{values.Marks[2]}}"><br><br></td>
-        </tr>
-        <tr>
-            <td><label for="sub4">Subject 4</label></td>
-            <td><input type="text" name="sub4" placeholder="Mark" value="{{values.Marks[3]}}"><br><br></td>
-        </tr>
-        <tr>
-            <td><label for="sub5">Subject 5</label></td>
-            <td><input type="text" name="sub5" placeholder="Mark" value="{{values.Marks[4]}}"><br><br></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="edit Student"></td>
-        </tr>
-    </table>
+{% extends 'base.html' %}
+
+{% block title %}Edit Details{% endblock title %}
+
+{% block body %}
+
+
+<form method="post" class="edit-form">
+    <h3>Edit Student</h3>
+    <div class="form-group">
+        <label for="Name">Name:</label>
+        <input type="text" name="Name" id="Name" placeholder="Enter Name" value="{{ values.Name }}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Age">Age:</label>
+        <input type="text" name="Age" id="Age" placeholder="Enter Age" value="{{ values.Age }}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Rollno">Roll No:</label>
+        <input type="text" name="Rollno" id="Rollno" placeholder="Enter Roll No" value="{{ values.Rollno }}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="sub1">Subject 1:</label>
+        <input type="text" name="sub1" id="sub1" placeholder="Enter Mark for Subject 1" value="{{ values.Marks[0] }}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="sub2">Subject 2:</label>
+        <input type="text" name="sub2" id="sub2" placeholder="Enter Mark for Subject 2" value="{{ values.Marks[1] }}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="sub3">Subject 3:</label>
+        <input type="text" name="sub3" id="sub3" placeholder="Enter Mark for Subject 3" value="{{ values.Marks[2] }}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="sub4">Subject 4:</label>
+        <input type="text" name="sub4" id="sub4" placeholder="Enter Mark for Subject 4" value="{{ values.Marks[3] }}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="sub5">Subject 5:</label>
+        <input type="text" name="sub5" id="sub5" placeholder="Enter Mark for Subject 5" value="{{ values.Marks[4] }}" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Edit Student</button>
 </form>
 
-</body>
-</html>
+{% endblock body %}
